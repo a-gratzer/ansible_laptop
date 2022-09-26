@@ -5,16 +5,16 @@
 # ####################################################
 INVENTORY_PATH ?= inventory/
 INVENTORY_FILE ?= /hosts.yaml
-ENV ?= .env
 # ####################################################
-
+ENV ?= .env
 -include ${ENV}
 
 init:
 	@echo "Add \"${ENV}\" file"
 	if [ ! -f  ${ENV} ] ; then \
     	touch ${ENV} && echo "SUDO_PW=<PASSWORD>" > ${ENV} ; \
-    fi;
+    fi; \
+    @echo "Open ${ENV} and set your sudo password"
 
 install_requirements:
 	ansible-galaxy install -r collection/requirements.yaml --force
@@ -29,3 +29,6 @@ commons:
             playbooks/laptop.yaml \
             	-e "ansible_become_password=${SUDO_PW}" \
             	--tags commons
+
+test:
+	echo ${FILES_PATH}

@@ -1,0 +1,4 @@
+---
+# tasks file for deployment
+-
+- include: snap/main.yml

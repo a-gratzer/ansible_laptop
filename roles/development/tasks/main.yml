@@ -1,0 +1,8 @@
+---
+# tasks file for development
+
+- include: apt/editors.yml
+- include: snap/editors.yml
+- include: apt/virtualization.yml
+
+
