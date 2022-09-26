@@ -1,0 +1,21 @@
+---
+
+- name: Install Slack
+  snap:
+    name: slack
+    classic: yes
+    channel: latest/stable
+  tags:
+  - slack
+  - chat
+  - communication
+
+- name: Install Discord
+  snap:
+    name: discord
+    classic: yes
+    channel: latest/stable
+  tags:
+  - discord
+  - chat
+  - communication
