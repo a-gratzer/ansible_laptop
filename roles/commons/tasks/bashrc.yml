@@ -1,0 +1,13 @@
+---
+
+- name: Bash aliases | Add aliases
+  lineinfile:
+    dest: "~/.bashrc"
+    create: yes
+    mode: 0644
+    line: 'alias {{ item.alias }}="{{ item.command }}"'
+    regexp: "^alias {{ item.alias }}="
+  with_items:
+    - { alias: 'c', command: 'cntb' }
+    - { alias: 'k', command: 'kubectl' }
+    - { alias: 'docker', command: 'podman' }

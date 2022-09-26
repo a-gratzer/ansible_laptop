@@ -1,21 +1,6 @@
 ---
 
-- name: Add PPA required for Alacritty
-  apt_repository:
-    repo: ppa:mmstick76/alacritty
-    state: present
-  tags:
-    - terminal
-    - alacritty
 
-- name: Install Alacritty (Terminal Emulator)
-  apt:
-    pkg: alacritty
-    state: latest
-  tags:
-  - terminal
-  - alacritty
-  -
 - name: Install Byobu (shell multiplexer)
   apt:
     pkg: byobu
