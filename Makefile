@@ -13,11 +13,11 @@ ENV ?= .env
 # Init ENV file
 
 init:
-	@echo "Add \"${ENV}\" file"
+	echo "Add \"${ENV}\" file"
 	if [ ! -f  ${ENV} ] ; then \
     	touch ${ENV} && echo "SUDO_PW=<PASSWORD>" > ${ENV} ; \
     fi; \
-    @echo "Open ${ENV} and set your sudo password"
+    echo "Open ${ENV} and set your sudo password"
 
 # ##################################################################################################
 # Install ansible-galaxy requiremnets
