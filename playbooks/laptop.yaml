@@ -12,6 +12,7 @@
     - { role: roles/development, become: yes, tags: [ 'development' ] }
     - { role: roles/deployment, become: yes, tags: [ 'deployment' ] }
     - { role: roles/communication, become: yes, tags: [ 'chat', 'communication' ] }
+    - { role: roles/terminal, become: yes, tags: [ 'terminal' ] }
     #- { role: databases, become: yes, tags: [ 'db', 'dev' ] }
     #- { role: documentation, become: yes, tags: [ 'docs' ] }
     #- { role: fonts, become: yes, tags: [ 'fonts' ] }
