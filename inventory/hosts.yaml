@@ -1,0 +1,9 @@
+popos:
+  hosts:
+    127.0.0.1
+  vars:
+    hostname: popos-ag
+    ansible_connection: local
+    remote_user: ag
+    #ansible_ssh_user: ag
+    #ansible_port: 2222

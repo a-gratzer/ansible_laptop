@@ -1,0 +1,21 @@
+---
+- name: Ansible Playbook to setup my laptop running Pop-OS
+  hosts: popos
+  vars:
+    home_dir: "{{ lookup('env', 'HOME') }}"
+  roles:
+    - { role: commons, become: yes, tags: ['commons'] }
+    #- { role: communication, become: yes, tags: [ 'chat', 'im' ] }
+    #- { role: databases, become: yes, tags: [ 'db', 'dev' ] }
+    #- { role: development, become: yes, tags: [ 'dev' ] }
+    #- { role: documentation, become: yes, tags: [ 'docs' ] }
+    #- { role: fonts, become: yes, tags: [ 'fonts' ] }
+    #- { role: geerlingguy.docker, become: yes, tags: [ 'containers', 'dev' ] }
+    #- { role: git, become: yes, tags: [ 'git' ] }
+    #- { role: graphics, become: yes, tags: [ 'graphics' ] }
+    #- { role: java, become: yes, tags: [ 'dev', 'java' ] }
+    #- { role: multimedia, become: yes, tags: [ 'audio', 'video' ] }
+    #- { role: productivity, become: yes, tags: [ 'productivity' ] }
+    #- { role: python, become: yes, tags: [ 'dev', 'python' ] }
+  tasks:
+    - debug: msg="You are running this Playbook as user {{ lookup('env','USER') }}"

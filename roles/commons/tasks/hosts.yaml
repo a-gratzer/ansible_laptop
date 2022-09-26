@@ -1,0 +1,14 @@
+---
+
+- name: Set hostname
+  hostname:
+    name: "{{ hostname }}"
+  tags: hosts
+
+- name: Set fqdn
+  hostname:
+    name: "{{ hostname }}.{{ domain }}"
+  tags: hosts
+
+- name: Print out the hostname of target
+  command: hosts
