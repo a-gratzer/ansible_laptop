@@ -5,13 +5,15 @@
 # ####################################################
 INVENTORY_PATH ?= inventory/
 INVENTORY_FILE ?= /hosts.yaml
-ENV_FILE ?= .env
+ENV ?= .env
 # ####################################################
 
+-include ${ENV}
+
 init:
-	@echo "Add \"${ENV_FILE}\" file"
-	if [ ! -f  ${ENV_FILE} ] ; then \
-    	touch ${ENV_FILE} && echo "SUDO_PW=<PASSWORD>" > ${ENV_FILE} ; \
+	@echo "Add \"${ENV}\" file"
+	if [ ! -f  ${ENV} ] ; then \
+    	touch ${ENV} && echo "SUDO_PW=<PASSWORD>" > ${ENV} ; \
     fi;
 
 install_requirements:
@@ -19,9 +21,11 @@ install_requirements:
 	ansible-galaxy list
 
 install: install_requirements
-	ansible-playbook -i ${INVENTORY_PATH} playbooks/laptop.yaml
+	ansible-playbook -i ${INVENTORY_PATH} playbooks/laptop.yaml \
+    	-e "ansible_become_password=${SUDO_PW}"
 
 commons:
 	ansible-playbook -i ${INVENTORY_PATH} \
             playbooks/laptop.yaml \
-            --tags commons
+            	-e "ansible_become_password=${SUDO_PW}" \
+            	--tags commons

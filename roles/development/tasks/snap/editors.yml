@@ -1,0 +1,31 @@
+---
+
+- name: Install VS Codium (classic confinement)
+  snap:
+    name: codium
+    classic: yes
+  tags:
+    - snap
+    - editor
+    - code
+
+- name: Install Postman
+  snap:
+    name: postman
+    channel: latest
+  tags:
+    - snap
+    - editor
+    - api
+    - debug
+
+- name: Install Insomnia (GraphQL API client)
+  snap:
+    name: insomnia
+    channel: latest
+  tags:
+    - snap
+    - editor
+    - api
+    - debug
+

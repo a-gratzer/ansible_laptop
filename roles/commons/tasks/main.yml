@@ -1,4 +1,7 @@
 ---
 # tasks file for common
-- include: hosts.yaml
+- include: hosts.yml
+- include: folders.yml
+- include: apt/apt_basic.yml
+- include: apt/apt_packages.yml
 

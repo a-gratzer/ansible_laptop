@@ -1,0 +1,33 @@
+---
+
+- name: Install a list of packages to their latest version
+  tags: cli
+  apt:
+    name: "{{ packages }}"
+    state: latest
+  vars:
+    packages:
+    - curl
+    # https://direnv.net/
+    # "direnv allow ." Create env for dir
+    - direnv
+    - htop
+    - jq
+    # https://github.com/ggreer/the_silver_searcher
+    # fast search
+    - silversearcher-ag
+    # https://tldr.sh/
+    # Simplified and community-driven man pages
+    # update cache: tldf -u
+    # tldr grep
+    - tldr
+    # https://github.com/andreafrancia/trash-cli
+    # trash-put x.txt trash-list trash-empty ...
+    - trash-cli
+    # tree-view
+    # tldr tree
+    - tree
+    # text editor
+    - sublime-text
+    # fuzzy finder
+    - fzf

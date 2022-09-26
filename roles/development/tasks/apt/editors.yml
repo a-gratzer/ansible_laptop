@@ -1,0 +1,10 @@
+---
+
+- name: Install Neovim
+  apt:
+    pkg: neovim
+    state: latest
+  tags:
+    - apt
+    - editor
+

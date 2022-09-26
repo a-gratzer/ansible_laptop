@@ -1,0 +1,10 @@
+---
+
+- name: Creates basic directory setup
+  file:
+    path: /opt
+    state: directory
+    owner: root
+    group: root
+    mode: 0775
+    recurse: yes

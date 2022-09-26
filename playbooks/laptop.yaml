@@ -1,10 +1,11 @@
 ---
 - name: Ansible Playbook to setup my laptop running Pop-OS
   hosts: popos
+  become: true
   vars:
     home_dir: "{{ lookup('env', 'HOME') }}"
   roles:
-    - { role: commons, become: yes, tags: ['commons'] }
+    - { role: roles/commons, become: yes, tags: ['commons'] }
     #- { role: communication, become: yes, tags: [ 'chat', 'im' ] }
     #- { role: databases, become: yes, tags: [ 'db', 'dev' ] }
     #- { role: development, become: yes, tags: [ 'dev' ] }

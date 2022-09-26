@@ -1,0 +1,12 @@
+---
+
+- name: Install Heroku CLI
+  snap:
+    name: heroku
+    classic: yes
+    channel: latest/stable
+  tags:
+  - deployment
+  - ci
+  - cd
+  - heroku

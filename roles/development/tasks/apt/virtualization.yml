@@ -1,0 +1,16 @@
+#---
+
+- name: Install Virtualbox (virtualization tool)
+  apt:
+    pkg: virtualbox
+    state: latest
+  tags: virtualization
+
+- name: Install Podman (container tool)
+  apt:
+    pkg: podman
+    state: latest
+  tags:
+    - virtualization
+    - docker
+
