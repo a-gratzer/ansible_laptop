@@ -4,8 +4,13 @@
   become: true
   vars:
     home_dir: "{{ lookup('env', 'HOME') }}"
+    cntb_version : "v1.3.0"
+    opt_folder : "/opt"
+
   roles:
-    - { role: roles/commons, become: yes, tags: ['commons'] }
+#    - { role: roles/commons, become: yes, tags: ['commons'] }
+#    - { role: roles/development, become: yes, tags: [ 'development' ] }
+    - { role: roles/deployment, become: yes, tags: [ 'deployment' ] }
     #- { role: communication, become: yes, tags: [ 'chat', 'im' ] }
     #- { role: databases, become: yes, tags: [ 'db', 'dev' ] }
     #- { role: development, become: yes, tags: [ 'dev' ] }

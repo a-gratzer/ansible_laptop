@@ -1,0 +1,39 @@
+---
+- name: Creates basic directory setup
+  file:
+    path: "{{ opt_folder }}/contabo"
+    state: directory
+    owner: root
+    group: root
+    mode: 0775
+    recurse: yes
+  tags:
+  - deployment
+  - contabo
+
+- name: Download cntb zip
+  ansible.builtin.get_url:
+    url: "https://github.com/contabo/cntb/releases/download/{{ cntb_version }}/cntb_{{ cntb_version }}_Linux_arm64.tar.gz"
+    checksum: "sha256:https://github.com/contabo/cntb/releases/download/{{ cntb_version }}/checksums.txt"
+    dest: "{{ opt_folder }}/contabo/cntb.tar.gz"
+    mode: 0755
+  register: cntb_binary
+  tags:
+    - deployment
+    - contabo
+
+- name: Extract cntb binary
+  ansible.builtin.unarchive:
+    src: "{{ opt_folder }}/contabo/cntb.tar.gz"
+    dest: "{{ opt_folder }}/contabo"
+  tags:
+  - deployment
+  - contabo
+
+- name: "Delete \"{{ opt_folder }}/contabo/cntb.tar.gz\""
+  ansible.builtin.file:
+    path: "{{ opt_folder }}/contabo/cntb.tar.gz"
+    state: absent
+  tags:
+  - deployment
+  - contabo

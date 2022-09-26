@@ -30,5 +30,8 @@ commons:
             	-e "ansible_become_password=${SUDO_PW}" \
             	--tags commons
 
-test:
-	echo ${FILES_PATH}
+deployment:
+	ansible-playbook -i ${INVENTORY_PATH} \
+            playbooks/laptop.yaml \
+            	-e "ansible_become_password=${SUDO_PW}" \
+            	--tags contabo
