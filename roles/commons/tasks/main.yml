@@ -1,8 +1,11 @@
 ---
 # tasks file for common
-#- include: hosts.yml
-#- include: folders.yml
-#- include: apt/apt_basic.yml
-#- include: apt/apt_packages.yml
+
+- include: hosts.yml
+- include: folders.yml
+- include: apt/apt_basic.yml
+- include: apt/apt_packages.yml
 - include: bashrc.yml
+- include: flatpak/absent.yml
+- include: flatpak/present.yml
 

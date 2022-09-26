@@ -1,0 +1,9 @@
+---
+
+- name: flatpak items present
+  flatpak:
+    name: "{{ item.url }}"
+    state: present
+    method: user
+  loop:
+  - { name: 'Flameshot', url: 'https://dl.flathub.org/repo/appstream/org.flameshot.Flameshot.flatpakref' }

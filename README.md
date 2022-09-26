@@ -27,6 +27,11 @@ Roles/Tasks
    2. apt packages
    3. folders
    4. hosts
+   5. bashrc
+      6. alias
+   7. flatpak
+      8. absent
+      9. present
 2. communication
    1. snap
       1. slack

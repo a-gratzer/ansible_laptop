@@ -1,0 +1,11 @@
+---
+
+- name: flatpak items absent
+  flatpak:
+    name: "{{ item.url }}"
+    state: absent
+    method: user
+  loop:
+  - { name: 'Visual Studio Code - OSS', url: 'https://flathub.org/repo/appstream/com.visualstudio.code.oss.flatpakref' }
+  - { name: 'Flowblade', url: 'https://flathub.org/repo/appstream/io.github.jliljebl.Flowblade.flatpakref' }
+  - { name: 'Spotify', url: 'https://flathub.org/repo/appstream/com.spotify.Client.flatpakref' }
