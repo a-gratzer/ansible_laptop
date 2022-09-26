@@ -6,7 +6,7 @@
     classic: yes
   tags:
     - snap
-    - editor
+    - editors
     - code
 
 - name: Install Postman
@@ -15,7 +15,7 @@
     channel: latest
   tags:
     - snap
-    - editor
+    - editors
     - api
     - debug
 
@@ -25,7 +25,7 @@
     channel: latest
   tags:
     - snap
-    - editor
+    - editors
     - api
     - debug
 

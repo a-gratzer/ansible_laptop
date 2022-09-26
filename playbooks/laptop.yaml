@@ -8,8 +8,8 @@
     opt_folder : "/opt"
 
   roles:
-#    - { role: roles/commons, become: yes, tags: ['commons'] }
-#    - { role: roles/development, become: yes, tags: [ 'development' ] }
+    - { role: roles/commons, become: yes, tags: ['commons'] }
+    - { role: roles/development, become: yes, tags: [ 'development' ] }
     - { role: roles/deployment, become: yes, tags: [ 'deployment' ] }
     #- { role: communication, become: yes, tags: [ 'chat', 'im' ] }
     #- { role: databases, become: yes, tags: [ 'db', 'dev' ] }

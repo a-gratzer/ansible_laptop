@@ -43,27 +43,17 @@ commons:
             	--tags commons
 
 # ##################################################################################################
+# Development
+development:
+	ansible-playbook -i ${INVENTORY_PATH} \
+            playbooks/laptop.yaml \
+            	-e "ansible_become_password=${SUDO_PW}" \
+            	--tags virtualization
+
+# ##################################################################################################
 # Deployments
 
 deployment:
 	ansible-playbook -i ${INVENTORY_PATH} \
             playbooks/laptop.yaml \
             	-e "ansible_become_password=${SUDO_PW}"
-
-deployment_snap:
-	ansible-playbook -i ${INVENTORY_PATH} \
-            playbooks/laptop.yaml \
-            	-e "ansible_become_password=${SUDO_PW}" \
-            	--tags snap
-
-deployment_contabo:
-	ansible-playbook -i ${INVENTORY_PATH} \
-            playbooks/laptop.yaml \
-            	-e "ansible_become_password=${SUDO_PW}" \
-            	--tags contabo
-
-deployment_heroku:
-	ansible-playbook -i ${INVENTORY_PATH} \
-            playbooks/laptop.yaml \
-            	-e "ansible_become_password=${SUDO_PW}" \
-            	--tags heroku

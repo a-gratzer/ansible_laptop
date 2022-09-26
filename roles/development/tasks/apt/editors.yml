@@ -6,5 +6,5 @@
     state: latest
   tags:
     - apt
-    - editor
+    - editors
 
